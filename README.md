@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sample project following the [Ruby on Rails tutorial][https://railstutorial.org/]
+with a few small tweaks
 
-Things you may want to cover:
 
-* Ruby version
+# Instructions
+  * Clone the repo
+  * Install gems using `bundle install --without production`
+  * Run migrations using `rails db:migrate`
+  * Run tests `rails test`
+  * Run the server `rails server`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#TODO
+  * Publish on heroku and add the link here
+  * Integrate travis-ci
