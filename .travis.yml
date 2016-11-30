@@ -1,0 +1,15 @@
+language: ruby
+
+branches:
+    only:
+        - master
+        - develop
+
+rvm:
+    - 2.3.3
+
+install:
+    - bundle install --without production
+
+script:
+    - rails test
