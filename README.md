@@ -3,6 +3,7 @@
 Sample project following the [Ruby on Rails tutorial][https://railstutorial.org/]
 with a few small tweaks
 
+You can view the app live [here](https://damp-tor-76551.herokuapp.com)
 
 # Instructions
   * Clone the repo
@@ -11,6 +12,3 @@ with a few small tweaks
   * Run tests `rails test`
   * Run the server `rails server`
 
-## TODO
-  * Publish on heroku and add the link here
-  * ~~Integrate travis-ci~~
