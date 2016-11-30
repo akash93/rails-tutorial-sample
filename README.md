@@ -11,6 +11,6 @@ with a few small tweaks
   * Run tests `rails test`
   * Run the server `rails server`
 
-#TODO
+## TODO
   * Publish on heroku and add the link here
   * ~~Integrate travis-ci~~
