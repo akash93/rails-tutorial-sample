@@ -1,9 +1,9 @@
 language: ruby
 
-# branches:
-#     only:
-#         - master
-#         - develop
+branches:
+    only:
+        - master
+        - develop
 
 rvm:
     - 2.3.3
