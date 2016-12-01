@@ -11,5 +11,8 @@ rvm:
 install:
     - bundle install --without production
 
+before_script:
+    - rails db:migrate
+
 script:
     - rails test
