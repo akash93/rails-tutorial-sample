@@ -1,18 +1,25 @@
 language: ruby
-
 branches:
-    only:
-        - master
-        - develop
-
+  only:
+  - master
+  - develop
 rvm:
-    - 2.3.3
-
+  - 2.3.3
 install:
-    - bundle install --without production
+  - bundle install --without production
+before_script:
+  - rails db:migrate
 
 before_script:
     - rails db:migrate
 
 script:
-    - rails test
+  - rails test
+deploy:
+  provider: heroku
+  api_key:
+    secure: Y1wA0Gem8dwsC8uimHF5kW1HlMG3Ffy+2Sa79AMdbbZ06BSaQsIX13asVoXSYsRYbDbPPSh1be4tfMDjRrdU0hfQB2cdlZbiwQ/D2wfD12R0igyN0Iyny9y2yHiiUaKyh+X1mD1gyCmlMHUBNnXk53Og0s2g87AoDd0qimiZ+bze9J2BQrb7kcop2gwsem1WZQGvLxn/OdMP+WsH65fLWe/yEYK7RnGM/mSuvxyrwpdndKMctsi2Uefx9jgkWrE71JDKZ7G8ufz/afT6dKsAkCAS9ouo50oN39nw1NZTcXIy/ds+mZ1qHjiE1GKsECK99YaXT9H+6HJJpnt12M4Whw7sZKQXaoxxUKDHV4yXX7Fd8Tr/pwODoV3HADgUh/MjwyCC/esMLnZbK20i7dkrMuBKiRtpnxEcop76Lr/3Fc3saTLUyAw7DM8HGdCICnzeDBlTUjLQ1hiB3dbQZNqjTi6VNqbKjHBLfqh9rIZi9I3LZXKVMEBayY0PBN1crZTwm4sri97FCjoQek1n128rUE4U3BcGK0+aL5uT/Ozd2j278AcwyXuPOmqdy9Da2b3TrxXxxJDppD0711XYkYmxAMGUK6liQeKWsWOD4Pas+bhuti8F90W9nilXFJBaTI4cT/n/HS8CO7/CAcfRsuiXVUffpb1ybxSIlByvmm6PCO4=
+  run: 'rails db:migrate'
+  app: damp-tor-76551
+  on:
+    repo: akash93/rails-tutorial-sample
