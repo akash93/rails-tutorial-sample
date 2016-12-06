@@ -10,7 +10,9 @@ User.create(name: 'Akash Khan',
             email: 'akashkhan25@gmail.com',
             password: 'password',
             password_confirmation: 'password',
-            admin: true)
+            admin: true,
+            activated: true,
+            activated_at: Time.zone.now)
 
 
 
@@ -18,5 +20,5 @@ User.create(name: 'Akash Khan',
   name = Faker::Name.name
   email = "example-#{n + 1}@railstutorial.org"
   password = 'password'
-  User.create!(name: name, email: email, password: password, password_confirmation: password)
+  User.create!(name: name, email: email, password: password, password_confirmation: password, activated: true, activated_at: Time.zone.now)
 end
