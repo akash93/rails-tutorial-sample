@@ -10,6 +10,10 @@ gem 'bootstrap-sass'
 # Generate mock objects
 gem 'faker'
 
+# Paginate data
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
