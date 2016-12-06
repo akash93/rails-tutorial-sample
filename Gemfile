@@ -6,6 +6,14 @@ ruby '2.3.3'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'bcrypt'
 gem 'bootstrap-sass'
+
+# Generate mock objects
+gem 'faker'
+
+# Paginate data
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
