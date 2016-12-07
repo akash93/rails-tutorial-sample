@@ -2,16 +2,27 @@ test:
     name: Test User
     email: user@example.com
     password_digest: <%= User.digest('password') %>
+    activated: true
+    activated_at: <%= Time.zone.now %>
 
 admin:
     name: Admin User
     email: admin@example.com
     password_digest: <%= User.digest('password') %>
     admin: true
+    activated: true
+    activated_at: <%= Time.zone.now %>
+
+deactivated_user:
+    name: Example User
+    email: deuser@example.com
+    password_digest: <%= User.digest('password') %>
 
 <% 30.times do |n| %>
 user_<%= n %>:
     name: <%= " Test User #{n}" %>
     email: <%= "testuser-#{n}@example.com" %>
     password_digest: <%= User.digest('password') %>
+    activated: true
+    activated_at: <%= Time.zone.now %>
 <% end %>
