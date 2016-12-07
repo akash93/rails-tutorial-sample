@@ -1,7 +1,7 @@
 <%provide(:title, "Home") %>
 <% if logged_in? %>
-  <%= render 'home_logged_in' %>
+  <%= render 'static_pages/home_logged_in' %>
 <% else %>
-  <%= render 'home' %>
+  <%= render 'static_pages/home_logged_out' %>
 <% end %>
 
