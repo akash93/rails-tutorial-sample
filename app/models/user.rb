@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :microposts, dependent: :destroy
   before_create :create_activation_digest
   before_save { email.downcase! }
   validates :name , presence: true, length: { maximum: 50 }
@@ -41,6 +42,10 @@ class User < ApplicationRecord
 
   def send_activation_mail
     UserMailer.account_activation(self).deliver_now
+  end
+
+  def feed
+    Micropost.where('user_id = ?', id)
   end
 
   private

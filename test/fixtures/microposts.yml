@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+most_recent:
+  content: 'Most recent post'
+  created_at: <%= Time.zone.now %>
+  user: admin
+
+random_post:
+  content: 'Random post'
+  created_at: <%= 10.minutes.ago %>
+  user: test
+
+example_post:
+  content: 'Example post'
+  created_at: <%= 12.years.ago %>
+  user: test
+
+
+<% 30.times do |n| %>
+post_<%= n %>:
+  content: <%= Faker::Lorem.sentence(4) %>
+  created_at: <%= 21.minutes.ago %>
+  user: admin
+
+test_post_<%= n %>:
+  content: <%= Faker::Lorem.sentence(4) %>
+  created_at: <%= 21.minutes.ago %>
+  user: test
+
+
+<% end %>
+
+
