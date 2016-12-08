@@ -1,5 +1,6 @@
 require 'test_helper'
 
+
 class MicropostsControllerTest < ActionDispatch::IntegrationTest
 
   def setup
@@ -18,5 +19,14 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
       delete micropost_path(@post)
     end
     assert_redirected_to login_url
+  end
+
+  test 'should redirect destroy for wrong post' do
+    log_in_as(users(:admin))
+    micropost = microposts(:random_post)
+    assert_no_difference 'Micropost.count' do
+      delete micropost_path(micropost)
+    end
+    assert_redirected_to root_url
   end
 end

@@ -24,7 +24,7 @@ User.create(name: 'Akash Khan',
 end
 
 users = User.order(:created_at).take(5)
-20.times do |n|
+50.times do |n|
   content = Faker::Lorem.sentence(3)
   users.each { |user| user.microposts.create!(content:content) }
 end

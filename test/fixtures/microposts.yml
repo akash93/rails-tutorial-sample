@@ -21,4 +21,13 @@ post_<%= n %>:
   content: <%= Faker::Lorem.sentence(4) %>
   created_at: <%= 21.minutes.ago %>
   user: admin
+
+test_post_<%= n %>:
+  content: <%= Faker::Lorem.sentence(4) %>
+  created_at: <%= 21.minutes.ago %>
+  user: test
+
+
 <% end %>
+
+
