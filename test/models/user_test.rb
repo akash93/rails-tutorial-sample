@@ -86,13 +86,13 @@ class UserTest < ActiveSupport::TestCase
 
   test 'should be able to follow and unfollow user' do
     admin = users(:admin)
-    test_user = users(:test)
-    assert_not admin.following?(test_user)
-    admin.follow(test_user)
-    assert admin.following?(test_user)
-    assert test_user.followers.include?(admin)
-    admin.unfollow(test_user)
-    assert_not admin.following?(test_user)
+    deactivated_user = users(:deactivated_user)
+    assert_not admin.following?(deactivated_user)
+    admin.follow(deactivated_user)
+    assert admin.following?(deactivated_user)
+    assert deactivated_user.followers.include?(admin)
+    admin.unfollow(deactivated_user)
+    assert_not admin.following?(deactivated_user)
   end
 
 end
