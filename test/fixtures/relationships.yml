@@ -1,0 +1,11 @@
+one:
+  follower: admin
+  followed: test
+
+two:
+  follower: test
+  followed: admin
+
+three:
+  follower: deactivated_user
+  followed: admin
