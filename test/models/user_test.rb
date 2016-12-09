@@ -84,4 +84,32 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  test 'should be able to follow and unfollow user' do
+    admin = users(:admin)
+    deactivated_user = users(:deactivated_user)
+    assert_not admin.following?(deactivated_user)
+    admin.follow(deactivated_user)
+    assert admin.following?(deactivated_user)
+    assert deactivated_user.followers.include?(admin)
+    admin.unfollow(deactivated_user)
+    assert_not admin.following?(deactivated_user)
+  end
+
+  test 'feed should have right posts' do
+    admin = users(:admin)
+    test_user = users(:test)
+    deactivated_user = users(:deactivated_user)
+
+    admin.microposts.each do | post_following|
+      assert test_user.feed.include?(post_following)
+    end
+
+    admin.microposts.each do | post_self|
+      assert admin.feed.include?(post_self)
+    end
+
+    deactivated_user.microposts.each do | post_unfollowed|
+      assert_not admin.feed.include?(post_unfollowed)
+    end
+  end
 end

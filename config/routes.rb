@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
 
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
 
@@ -16,4 +20,5 @@ Rails.application.routes.draw do
 
   resources :account_activations, only: [:edit]
   resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 end
